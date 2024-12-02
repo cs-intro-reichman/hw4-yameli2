@@ -133,16 +133,14 @@ public class ArrCharOps {
      *  The hash value of an empty array is zero.
      */
     public static long hashCode(char[] arr) {
-        int sum=0;
-        int x=0;
-        for(int i=arr.length-1;i>0;i--){
-            sum+=arr[x]*(int)Math.pow(7,i);
-            x++;
-        }
-        if(sum!=0)
-        return sum;
-       else
+        if(arr.length==0||arr==null)
         return 0;
+        int hashcode=0;
+        int x= arr.length;
+        for(int i=0;i<arr.length;i++){
+            hashcode+=arr[i]*Math.pow(7,(x-1-i));
+        }
+        return hashcode;
     }
 
     /**
