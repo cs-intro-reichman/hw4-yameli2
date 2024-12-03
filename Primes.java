@@ -3,30 +3,29 @@ public class Primes {
     
     public static void main(String[] args) {
       int n = Integer.parseInt(args[0]);
-     /// double p=((double)(CountPrime(n)/n))*100.0;
-      System.out.println("There are "+CountPrime(n)+" primes between 2 and "+n+". ("+((CountPrime(n)*100)/30)+"% are primes)");
+      System.out.println("There are "+CountPrime(n)+" primes between 2 and "+n+". ("+((CountPrime(n)*100)/n)+"% are primes)");
  }
 
-    public static boolean Isprime(int num){
-        if(num<=1)
-        return false;
-        for(int i =1;i<(int)Math.sqrt(num);i++)
-        {
-            if(num%i==0)
-            return false;
-        }
-        return true;
-    }
+   // public static boolean Isprime(int num){
+     //   if(num<=1)
+       // return false;
+        //for(int i =1;i<(int)Math.sqrt(num);i++)
+        //{
+          //  if(num%i==0)
+           // return false;
+       // }
+        //return true;
+   // }
 
     public static int CountPrime(int n){
         Pcounnter=0;
         int k =2;
         boolean[] isprime= new boolean[n+1];
-        for(int i=2;i<n;i++){
+        for(int i=2;i<n+1;i++){
             isprime[i]=true;
         }
-        for(int j=2;j<n;j++){
-            while (k<n) {
+        for(int j=2;j<n+1;j++){
+            while (k<=n) {
                 if(isprime[k]==true)
                 if(k%j==0&&k!=j)
                 isprime[k]=false;
