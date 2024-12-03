@@ -4,7 +4,7 @@ public class Primes {
     public static void main(String[] args) {
       int n = Integer.parseInt(args[0]);
       System.out.println("Prime numbers up to "+n+":");
-      System.out.println("There are "+CountPrime(n)+" primes between 2 and "+n+". ("+((CountPrime(n)*100)/n)+"% are primes)");
+      System.out.println("There are "+CountPrime(n)+" primes between 2 and "+n+" ("+((CountPrime(n)*100)/n)+"% are primes)");
  }
    // public static boolean Isprime(int num){
      //   if(num<=1)
