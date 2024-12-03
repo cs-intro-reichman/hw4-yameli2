@@ -6,16 +6,6 @@ public class Primes {
       System.out.println("Prime numbers up to "+n+":");
       System.out.println("There are "+CountPrime(n)+" primes between 2 and "+n+" ("+((CountPrime(n)*100)/n)+"% are primes)");
  }
-   // public static boolean Isprime(int num){
-     //   if(num<=1)
-       // return false;
-        //for(int i =1;i<(int)Math.sqrt(num);i++)
-        //{
-          //  if(num%i==0)
-           // return false;
-       // }
-        //return true;
-   // }
 
     public static int CountPrime(int n){
         Pcounnter=0;
@@ -29,7 +19,7 @@ public class Primes {
                 if(isprime[k]==true)
                 if(k%j==0&&k!=j)
                 isprime[k]=false;
-                k++;
+                k++;    
         }
         k=j+1;    
         }
@@ -48,6 +38,7 @@ public class Primes {
            for(int t=0;t<isprime.length;t++){
             if (isprime[t]== true)
             Pcounnter++;
+            System.out.println(t);
            }
             return Pcounnter;   
         }
