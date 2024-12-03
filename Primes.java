@@ -35,7 +35,7 @@ public class Primes {
                // }
           //  }
        // }
-           for(int t=0;t<isprime.length;t++){
+           for(int t=2;t<isprime.length;t++){
             if (isprime[t]== true)
             Pcounnter++;
             System.out.println(t);
