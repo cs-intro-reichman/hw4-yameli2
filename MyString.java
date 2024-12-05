@@ -38,19 +38,31 @@ public class MyString {
     public static boolean contains(String str1, String str2) {
         str1=str1.toLowerCase();
         str2=str2.toLowerCase();
+        boolean equal=false;
         if(str1.length()<str2.length())
         return false;
-        for(int i =0;i<str1.length();i++)
+        if (str2=="")
+        return true;
+        //while(str1!=""||str2!=""){
+        for(int i =0;i<str2.length();i++)
         {
             for(int j=0;j<str1.length();j++){
                 if(str1.charAt(j)==str2.charAt(i))
                 {
+                    equal=true;
+                    if(str2.length()<j)
+                    return true;
                     if(str1.charAt(j+1)!=str2.charAt(i+1))
-                    return false;
-                    else return true;
+                    {
+                        equal=false;
+                        break;
+                    }
+                //else return true;
                 }
             }  
         }
-        return true;
+        return equal;
     }
-}
+  //  return false; 
+    }
+
