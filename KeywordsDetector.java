@@ -19,8 +19,7 @@ public class KeywordsDetector {
     }
        
         public static boolean contains(String str1, String str2) {
-             str1=str1.toLowerCase();
-             str2=str2.toLowerCase();
+            str1=str1.toLowerCase();
              if(str1.length()<str2.length())
              return false;
              for(int i =0;i<str1.length();i++)
@@ -52,7 +51,8 @@ public class KeywordsDetector {
         for(int i =0;i<sentences.length;i++){
             for(int j=0;j<keywords.length;j++){
                 String str=keywords[j];
-                if(sentences[i].contains(str))
+                //String str2=sentences[i].toLowerCase();
+               if(sentences[i].toLowerCase().contains(str.toLowerCase()))
                 {
                     System.out.println(sentences[i]);
                     break;
