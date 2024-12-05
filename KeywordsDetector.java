@@ -18,23 +18,22 @@ public class KeywordsDetector {
         detectAndPrint(sentences, keywords);
     }
        
-        public static boolean contains(String str1, String str2) {
-            str1=str1.toLowerCase();
+        public static boolean Scontains(String str1, String str2) {
+           // str1=str1.toLowerCase();
              if(str1.length()<str2.length())
              return false;
-             for(int i =0;i<str1.length();i++)
+             for(int i =0;i<str1.length()-str2.length();i++)
              {
                  boolean equal=true;
                  for(int j=0;j<str2.length();j++){
-                     if(str1.charAt(j+i)!= str2.charAt(j))
+                     if(str1.charAt(j+i)!=str2.charAt(j))
                      {
-                         equal=false;
+                        equal=false;
                         break;
                      }
                  }
                  if (equal) {
-                     return true;
-                     
+                     return true;    
                  } 
      
              }
@@ -51,14 +50,13 @@ public class KeywordsDetector {
         for(int i =0;i<sentences.length;i++){
             for(int j=0;j<keywords.length;j++){
                 String str=keywords[j];
-                //String str2=sentences[i].toLowerCase();
-               if(sentences[i].toLowerCase().contains(str.toLowerCase()))
+               //if(sentences[i].toLowerCase().contains(str.toLowerCase()))
+                if(Scontains((sentences[i].toLowerCase()),(str.toLowerCase())))
                 {
                     System.out.println(sentences[i]);
                     break;
                 }    
-            }
-           
+            }   
         }
     }
 }
