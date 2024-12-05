@@ -36,33 +36,31 @@ public class MyString {
 
     /** If str1 contains str2, returns true; otherwise returns false. */
     public static boolean contains(String str1, String str2) {
-        str1=str1.toLowerCase();
-        str2=str2.toLowerCase();
-        boolean equal=false;
+       // str1=str1.toLowerCase();
+       // str2=str2.toLowerCase();
         if(str1.length()<str2.length())
         return false;
-        if (str2=="")
-        return true;
+        //if (str2=="")
+       // return true;
         //while(str1!=""||str2!=""){
-        for(int i =0;i<str2.length();i++)
+        for(int i =0;i<str1.length();i++)
         {
-            for(int j=0;j<str1.length();j++){
-                if(str1.charAt(j)==str2.charAt(i))
+            boolean equal=true;
+            for(int j=0;j<str2.length();j++){
+                if(str1.charAt(j+i)!= str2.charAt(j))
                 {
-                    equal=true;
-                    if(str2.length()<j)
-                    return true;
-                    if(str1.charAt(j+1)!=str2.charAt(i+1))
-                    {
-                        equal=false;
-                        break;
-                    }
-                //else return true;
+                    equal=false;
+                   break;
                 }
-            }  
+            }
+            if (equal) {
+                return true;
+                
+            } 
+
         }
-        return equal;
+        return false;
     }
-  //  return false; 
-    }
+  
+}
 
